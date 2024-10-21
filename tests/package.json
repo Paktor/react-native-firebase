@@ -67,7 +67,6 @@
     ],
     "exclude": [
       "node_modules",
-      "src/modules/admob**",
       "src/modules/auth/phone**",
       "src/modules/notifications**",
       "src/utils**",

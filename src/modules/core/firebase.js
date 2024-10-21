@@ -9,10 +9,6 @@ import App from './app';
 import VERSION from '../../version';
 
 // module imports
-import {
-  statics as AdMobStatics,
-  MODULE_NAME as AdmobModuleName,
-} from '../admob';
 import { statics as AuthStatics, MODULE_NAME as AuthModuleName } from '../auth';
 import {
   statics as AnalyticsStatics,
@@ -68,7 +64,6 @@ import {
 } from '../utils';
 
 import type {
-  AdMobModule,
   AnalyticsModule,
   AuthModule,
   ConfigModule,
@@ -89,7 +84,6 @@ import type {
 const FirebaseCoreModule = NativeModules.RNFirebase;
 
 class Firebase {
-  admob: AdMobModule;
 
   analytics: AnalyticsModule;
 
@@ -126,7 +120,6 @@ class Firebase {
     APPS.initializeNativeApps();
 
     // modules
-    this.admob = APPS.moduleAndStatics('admob', AdMobStatics, AdmobModuleName);
     this.analytics = APPS.moduleAndStatics(
       'analytics',
       AnalyticsStatics,
@@ -231,7 +224,6 @@ class Firebase {
 const firebaseApp = new Firebase();
 export default firebaseApp;
 export const {
-  admob,
   analytics,
   auth,
   config,

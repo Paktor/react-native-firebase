@@ -8,7 +8,6 @@ import { SharedEventEmitter } from '../../utils/events';
 import INTERNALS from '../../utils/internals';
 import { isObject } from '../../utils';
 
-import AdMob, { NAMESPACE as AdmobNamespace } from '../admob';
 import Auth, { NAMESPACE as AuthNamespace } from '../auth';
 import Analytics, { NAMESPACE as AnalyticsNamespace } from '../analytics';
 import Config, { NAMESPACE as ConfigNamespace } from '../config';
@@ -40,8 +39,6 @@ export default class App {
   _nativeInitialized: boolean = false;
 
   _options: FirebaseOptions;
-
-  admob: () => AdMob;
 
   analytics: () => Analytics;
 
@@ -94,7 +91,6 @@ export default class App {
     }
 
     // modules
-    this.admob = APPS.appModule(this, AdmobNamespace, AdMob);
     this.analytics = APPS.appModule(this, AnalyticsNamespace, Analytics);
     this.auth = APPS.appModule(this, AuthNamespace, Auth);
     this.config = APPS.appModule(this, ConfigNamespace, Config);

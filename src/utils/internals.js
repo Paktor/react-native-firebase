@@ -4,7 +4,6 @@
 import { Platform } from 'react-native';
 
 const NAMESPACE_PODS = {
-  admob: 'Firebase/AdMob',
   analytics: 'Firebase/Analytics',
   auth: 'Firebase/Auth',
   config: 'Firebase/RemoteConfig',

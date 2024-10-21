@@ -1,6 +1,4 @@
 /* @flow */
-import type AdMob from '../modules/admob';
-import { typeof statics as AdMobStatics } from '../modules/admob';
 import type Analytics from '../modules/analytics';
 import { typeof statics as AnalyticsStatics } from '../modules/analytics';
 import type Auth from '../modules/auth';
@@ -54,7 +52,6 @@ export type FirebaseModuleConfig = {
 };
 
 export type FirebaseModuleName =
-  | 'RNFirebaseAdMob'
   | 'RNFirebaseAnalytics'
   | 'RNFirebaseAuth'
   | 'RNFirebaseRemoteConfig'
@@ -71,7 +68,6 @@ export type FirebaseModuleName =
   | 'RNFirebaseUtils';
 
 export type FirebaseNamespace =
-  | 'admob'
   | 'analytics'
   | 'auth'
   | 'config'
@@ -103,13 +99,6 @@ export type FirebaseModuleAndStatics<M: FirebaseModule, S: FirebaseStatics> = {
 } & S;
 
 export type FirebaseStatics = $Subtype<Object>;
-
-/* Admob types */
-
-export type AdMobModule = {
-  (): AdMob,
-  nativeModuleExists: boolean,
-} & AdMobStatics;
 
 /* Analytics types */
 
